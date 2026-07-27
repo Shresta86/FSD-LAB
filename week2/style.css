@@ -1,0 +1,100 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f8e6e6;
+    color:#0a0101;
+}
+
+/* Header - Flexbox */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#2e3136;
+    color:rgb(230, 227, 227);
+    padding:20px;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:rgb(59, 167, 194);
+}
+
+/* Main Layout - CSS Grid */
+.container{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+    padding:20px;
+}
+
+/* Card */
+.card{
+    background:rgb(74, 147, 156);
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(13, 9, 223, 0.2);
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #333;
+  gap: 15px;
+}
+
+
+/* Projects - CSS Grid */
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:15px;
+}
+
+.project{
+    background:#a51e3b;
+    color:rgb(17, 12, 12);
+    padding:20px;
+    text-align:center;
+    border-radius:8px;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    background:#333;
+    color:white;
+    padding:15px;
+    margin-top:20px;
+}
+
+/* Responsive */
+@media (max-width:768px){
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        flex-direction:column;
+        align-items:center;
+    }
+}

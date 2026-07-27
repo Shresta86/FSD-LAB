@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+         <h1>SHRESTA KANCHARLA</h1>
+        <nav>
+            <ul>
+            <a href="#about">About</a>
+            <a href="#academics">Academics</a>
+            <a href="#Projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <!-- CHANGE HERE: Pointed to the new separate page -->
+            <a href="experience.html">Extras</a>
+            
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- About Section -->
+        <section id="about" class="card">
+            <h2>About</h2>
+            <p>
+                  Hi, I'm Shresta a passionate B.Tech AIML student at CBIT, currently in my 3rd year. 
+            </p>
+        </section>
+
+        <!-- Academics Section (Fixed nesting syntax) -->
+        <section id="academics" class="card">
+             <h2>Academics</h2>
+             <div class="Academics">
+                 <p>B.E(2024-present):8.24(cgpa)</p>
+                 <p>11-12th:99.3%</p>
+                 <p>10th:98%</p>
+             </div>
+        </section>
+
+        <!-- Subject Section -->
+        <section id="Projects" class="card">
+            <h2>Projects</h2>
+            <div class="Projects-grid">
+                <div class="Project">
+                    <h3>Movie Recommendation System</h3>
+                    <p>
+                      Built a machine learning model using Python and scikit-learn to recommend movies 
+                      based on user preferences. Implemented collaborative filtering and content-based approaches.
+                    </p>
+<div class="project-sub-sections">
+                <div class="sub-section">
+                    <h4>Tech Stack</h4>
+                    <p>Python, Scikit-Learn, Pandas, NumPy</p>
+                </div>
+                </div>
+                <div class="Project">
+                    <h3>Built my own X</h3>
+                    <p>Built a machine learning model using Python and scikit-learn based on user preferences</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="card">
+            <h2>Contact</h2>
+            <p>Email: shresta@email.com</p>
+            <p>Phone: +91 9730527098</p>
+            <p><a href="https://linkedin.com" target="_blank">linked-in!</a></p>
+            <p><a href="https://github.com" target="_blank">Github!</a></p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Shresta. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
