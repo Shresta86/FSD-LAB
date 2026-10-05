@@ -1,0 +1,43 @@
+<!DOCTYPE html><html>
+
+</html>
+<head>
+    <title>weather dashboard</title>
+<a href="https geocoding api open meteo com/v1/search"
+rel = "stylesheet">Weather</a>
+</head>
+<body>
+    <script>
+        <h1>weather<h1>
+            <input type='text' id='city' placeholder='Enter city name'>
+            <button id='search'>Search</button>
+
+            <div id='result'></div>
+            function getWeather() 
+            {
+                const city = document.getElementById('city').value;
+                fetch(`https://geo-coding/app/meteo.com/v1/search?query=${city}&key=YOUR_API_KEY`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const longitude = data[0].longitude;
+                        const latitude = data[0].latitude;
+                        fetch(`https://geo-coding/app/meteo.com/v1/&city=${city}&longitude=${longitude}&latitude=${latitude}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto&key=YOUR_API_KEY`)
+                            .then(response => response.json())
+                            .then(d => {
+                                const result = document.getElementById('result');
+                                if (d.daily.current_weather) {
+                                    result.innerHTML = `Temperature Max: ${d.daily.temperature_2m_max}°C<br>
+                                                        Temperature Min: ${d.daily.temperature_2m_min}°C<br>
+                                                        Precipitation: ${d.daily.precipitation_sum}mm`;
+                                } else {
+                                    result.innerHTML = 'Weather data not available';
+                                    d.daily.time.forEach((day, i) => {
+                                        result.innerHTML += `<br>Day ${i + 1}: ${day} - Max Temp: ${d.daily.temperature_2m_max[i]}°C, Min Temp: ${d.daily.temperature_2m_min[i]}°C, Precipitation: ${d.daily.precipitation_sum[i]}mm`;
+                                    });
+                                }
+                            });
+                    });
+                }
+                </script>
+                </body>
+                </html>
