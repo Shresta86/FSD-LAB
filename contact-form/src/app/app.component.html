@@ -1,0 +1,46 @@
+<div class="form-container">
+
+  <h2>Job Application Form</h2>
+
+  <form [formGroup]="jobForm" (ngSubmit)="submit()">
+
+    <label>First Name</label>
+    <input type="text" formControlName="firstName" placeholder="Enter first name">
+
+    <p *ngIf="jobForm.get('firstName')?.touched && jobForm.get('firstName')?.invalid">
+      First name is required
+    </p>
+
+    <label>Last Name</label>
+    <input type="text" formControlName="lastName" placeholder="Enter last name">
+
+    <p *ngIf="jobForm.get('lastName')?.touched && jobForm.get('lastName')?.invalid">
+      Last name is required
+    </p>
+
+    <label>Mobile Number</label>
+    <input type="text" formControlName="mobile" placeholder="Enter 10-digit mobile number">
+
+    <p *ngIf="jobForm.get('mobile')?.touched && jobForm.get('mobile')?.invalid">
+      Enter a valid 10-digit mobile number
+    </p>
+
+    <label>Email ID</label>
+    <input type="email" formControlName="email" placeholder="Enter email ID">
+
+    <p *ngIf="jobForm.get('email')?.touched && jobForm.get('email')?.invalid">
+      Enter a valid email ID
+    </p>
+
+    <label>Other Information</label>
+    <textarea formControlName="information" placeholder="Enter other information"></textarea>
+
+    <p *ngIf="jobForm.get('information')?.touched && jobForm.get('information')?.invalid">
+      This field is required
+    </p>
+
+    <button type="submit">Submit Application</button>
+
+  </form>
+
+</div>
